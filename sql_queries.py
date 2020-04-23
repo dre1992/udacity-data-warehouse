@@ -164,7 +164,7 @@ WHERE ordered.user_id_recent = 1
 
 
 song_table_insert = ("""
-INSERT INTO songs SELECT song_id,title,artist_id,year,duration FROM staging_songs
+INSERT INTO songs SELECT DISTINCT song_id,title,artist_id,year,duration FROM staging_songs
 """)
 
 artist_table_insert = ("""

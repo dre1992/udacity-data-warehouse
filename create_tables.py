@@ -4,12 +4,26 @@ from sql_queries import create_table_queries, drop_table_queries
 
 
 def drop_tables(cur, conn):
+    """
+    Runs the queries that drop all tables specified in the drop_table_queries list
+
+    :parameter cur The cursor to execute the query on
+    :parameter conn The connection to the database
+    """
+
     for query in drop_table_queries:
         cur.execute(query)
         conn.commit()
 
 
 def create_tables(cur, conn):
+    """
+    Runs the queries that create  all tables as specified in the create_table_queries list
+
+    :parameter cur The cursor to execute the query on
+    :parameter conn The connection to the database
+    """
+
     for query in create_table_queries:
         cur.execute(query)
         conn.commit()
